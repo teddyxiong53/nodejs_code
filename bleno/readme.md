@@ -42,3 +42,7 @@ Device unsubscribed
 Disconnected from address: 49:a2:39:59:9e:42
 ```
 
+# 03
+
+我在02的基础上，自己增加了一个service。
+
