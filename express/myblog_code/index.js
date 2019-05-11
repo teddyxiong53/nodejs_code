@@ -7,6 +7,7 @@ var config = require("./config")
 var routes = require("./routes")
 var flash = require('connect-flash')
 var db  = require("./db")
+var ejs = require("ejs")
 
 app = express()
 
@@ -14,8 +15,8 @@ db.connect()
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-app.engine('html', require('ejs').renderFile)
-
+app.engine('html', ejs.__express)
+app.set('view engine', 'html')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
