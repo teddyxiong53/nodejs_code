@@ -1,10 +1,18 @@
-const User = require("./user.model")
+const UserModel = require("./user.model")
 module.exports = {
-    create: function create(user) {
-        return User.create(user).exec()
+    create: async function create(user) {
+        const userLocal = new UserModel(user)
+        await userLocal.save((err, result) =>{
+            if(err) {
+                console.log("保存user失败", err);
+                return
+            }
+            console.log("创建用户成功")
+
+        })
     },
     getUserByName: function getUserByName(name) {
-        return User.findOne({name: name})
+        return UserModel.findOne({name: name})
         .exec()
     }
 }

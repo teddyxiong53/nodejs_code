@@ -17,7 +17,7 @@ var postSchema = new Schema({
     }
 
 })
-Post = mongoose.model('Post', postSchema)
+PostModel = mongoose.model('PostModel', postSchema)
 //console.log(Post)
-module.exports = Post
+module.exports = PostModel
 

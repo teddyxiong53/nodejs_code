@@ -1,5 +1,6 @@
 var mongoose = require("mongoose")
 
+
 var Schema = mongoose.Schema
 
 var userSchema = new Schema({
@@ -12,11 +13,21 @@ var userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    gender: {
+        type: String,
+        required: true,
+        default: 'x'
+    },
+    bio: {
+        type: String,
+        required: true
     }
 
 })
-User = mongoose.model('User', userSchema)
+UserModel = mongoose.model('UserModel', userSchema)
 
-module.exports = User
+
+module.exports = UserModel
 
 
