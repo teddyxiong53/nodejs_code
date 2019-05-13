@@ -52,15 +52,8 @@ router.post('/', checkNotLogin, function (req, res, next) {
             req.flash('error', '注册失败')
             res.redirect('/signup')
         }
-        let user = result
-        //创建用户成功。返回保存用户的Promise
-        user.save(function (err, result) {
-            if (err) {
-                throw new Error("保存用户到数据库失败")
-            }
-            //console.log("save result:", result)
-        })
         //把user信息保存到session里。
+        let user = result
         //把敏感信息去掉。
         delete user.password
         req.session.user = user
