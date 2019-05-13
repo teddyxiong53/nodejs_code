@@ -1,4 +1,4 @@
-const User = require("../models/user.controller")
+
 const express = require("express")
 const router = express.Router()
 const UserModel = require("../models/user.model")
@@ -47,7 +47,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
     }
 
     UserModel.create(user, function (err, result) {
-        console.log("create result:", result)
+        //console.log("create result:", result)
         if (err) {
             req.flash('error', '注册失败')
             res.redirect('/signup')
@@ -58,7 +58,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
             if (err) {
                 throw new Error("保存用户到数据库失败")
             }
-            console.log("save result:", result)
+            //console.log("save result:", result)
         })
         //把user信息保存到session里。
         //把敏感信息去掉。

@@ -25,7 +25,8 @@ var userSchema = new Schema({
     }
 
 })
-UserModel = mongoose.model('UserModel', userSchema)
+//'User' 会对应数据库里的表，users。
+UserModel = mongoose.model('User', userSchema)
 
 
 module.exports = UserModel
