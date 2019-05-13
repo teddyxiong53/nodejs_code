@@ -7,6 +7,7 @@ module.exports = {
         next()
     },
     checkNotLogin: function(req, res, next) {
+        //console.log(req.session)
         if(req.session.user) {
             req.flash('error', '已登陆')
             return res.redirect('back')
