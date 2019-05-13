@@ -5,9 +5,16 @@ const checkLogin = require("../middlewares/check").checkLogin
 const PostModel = require("../models/post.model")
 
 router.get('/', function(req, res, next) {
-    const author = req.query.author
-    console.log("11")
-    res.render("posts")
+    //const author = req.query.author
+    //console.log("11")
+    PostModel.find({}, function(err, posts) {
+        if(err) {
+            console.log('read posts fail')
+
+        }
+        res.render("posts", {posts: posts})
+    })
+
 })
 
 router.get('/create', checkLogin, function(req, res, next) {
