@@ -8,7 +8,7 @@ var routes = require("./routes")
 var flash = require('connect-flash')
 var db  = require("./db")
 var ejs = require("ejs")
-
+var formidable = require("express-formidable")
 app = express()
 
 db.connect()
@@ -20,6 +20,9 @@ app.set('view engine', 'html')
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(formidable({
+
+}))
 app.use(session({
     secret: config.session.secret,
     name: config.session.key,

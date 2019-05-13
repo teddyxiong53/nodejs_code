@@ -1,0 +1,36 @@
+注册
+<%- include('components/notification.html') %>
+<div>
+    <form method="post"  enctype="multipart/form-data">
+        <div>
+            <label>用户名</label>
+            <input type="text" name="name" >
+        </div>
+        <div>
+            <label>密码</label>
+            <input type="password" name="password">
+        </div>
+        <div>
+            <label>重复密码</label>
+            <input type="password" name="repassword" >
+
+        </div>
+        <div>
+            <label>性别</label>
+            <select name="gender" >
+                <option value="m">男</option>
+                <option value="f">女</option>
+                <option value="x">保密</option>
+            </select>
+        </div>
+        <div>
+            <label >个人简介</label>
+            <textarea name="bio" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="注册">
+        </div>
+
+    </form>
+
+</div>
